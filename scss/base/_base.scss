@@ -1,0 +1,21 @@
+@use '../variables/variables' as *;
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: $fs-main;
+    font-family: $fm-100;
+    background-color: $cream;
+}
+
+p {
+    font-size: $fs-p;
+}
+
+h1 {
+    font-size: $fs-h1;
+    font-family: $fm-200;
+}

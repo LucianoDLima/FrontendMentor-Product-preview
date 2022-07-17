@@ -1,0 +1,158 @@
+@use 'variables/variables' as *;
+@use 'reset/reset';
+@use 'base/base';
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+main {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.item {
+    display: grid;
+    margin-inline: 1.6rem;
+    max-width: 34.3rem;
+    background-color: $white;
+    border-radius: $radius-100;
+
+    @include mq-laptop {
+        flex-direction: row;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 45rem;
+        max-width: 60rem;
+        max-height: 45rem;
+    }
+
+    &__image {
+    padding-bottom: 1.9rem; 
+
+        img {
+            width: 100%;
+            border-radius: $radius-100 $radius-100 0 0;
+
+            @include mq-laptop {
+                border-radius: $radius-100 0 0 $radius-100;
+            }
+        }
+
+        .perfume-pic-mobile {
+            @include mq-laptop {
+                display: none;
+            }
+        }
+
+        .perfume-pic-desktop {
+            display: none;
+            @include mq-laptop {
+                display: block;
+            }
+        }
+    }   
+    
+
+    &__text {
+        padding-inline: 2.4rem;
+        padding-bottom: 2.4rem;
+
+        @include mq-laptop {
+            padding-inline: 3.2rem;
+            padding-top: 3.1rem;
+        }
+        
+        .text__title {
+            margin-bottom: 4.4rem;
+
+            @include mq-laptop {
+                margin-bottom: 2.7rem;
+            }
+
+            .title__type {
+                font-family: $fm-100;
+                color: $dark-grayish-blue;
+                text-transform:uppercase;
+                letter-spacing: .415rem;
+                margin-bottom: 1.15rem;
+
+                @include mq-laptop {
+                    margin-bottom: 2rem;
+                }
+            }
+
+            h1 {
+                line-height: 1.1;
+                margin-bottom: 1.4rem;
+                color: $very-dark-blue;
+
+                @include mq-laptop {
+                    margin-bottom: 2.1rem;
+                }
+            }
+            
+            p:not(.title__type) {
+                line-height: 1.8;
+                color: $dark-grayish-blue;
+
+                @include mq-laptop {
+                    line-height: 1.66;
+                    font-size: calc(#{$fs-p} + .1rem);
+                }
+            }
+        }
+
+        .text__price {
+            display: flex;
+            flex-direction: column;
+
+            .price__div-1 {
+                display: flex;
+                gap: 2.4rem;
+                align-items: center;
+                margin-bottom: 1.6rem;
+
+                @include mq-laptop {
+                    margin-bottom: 2.6rem;
+                }
+
+                .price__current-price {
+                    font-family: $fm-200;
+                    font-size: 2.2em;
+                    color: $dark-cyan;
+                }
+                
+                .price__previous-price {
+                    font-family: $fm-100;
+                    text-decoration: line-through;
+                    color: $dark-grayish-blue;
+                }
+            }
+
+            .price__add-purchase {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 4.8rem;
+                width: 100%;
+                background-color: $dark-cyan;
+                border: none;
+                border-radius: $radius-200;
+                transform: translateX(.1rem);
+                font-weight: 700;
+                color: $white;
+                gap: 1.1rem;
+                transition: all 80ms ease-in;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $darker-cyan;
+                }
+
+                @include mq-laptop {
+                    transform: translateX(-.01rem);
+                }
+            }
+        }
+
+    }
+}
+

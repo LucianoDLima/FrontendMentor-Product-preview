@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Screen reader only, for accessibility when needed */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Montserrat";
+  background-color: hsl(30deg, 38%, 92%);
+}
+
+p {
+  font-size: 1.3rem;
+}
+
+h1 {
+  font-size: 2.9999rem;
+  font-family: "Fraunces";
+}
+
+main {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.item {
+  display: grid;
+  margin-inline: 1.6rem;
+  max-width: 34.3rem;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 1rem;
+}
+@media only screen and (min-width: 750px) {
+  .item {
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 45rem;
+    max-width: 60rem;
+    max-height: 45rem;
+  }
+}
+.item__image {
+  padding-bottom: 1.9rem;
+}
+.item__image img {
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+}
+@media only screen and (min-width: 750px) {
+  .item__image img {
+    border-radius: 1rem 0 0 1rem;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .item__image .perfume-pic-mobile {
+    display: none;
+  }
+}
+.item__image .perfume-pic-desktop {
+  display: none;
+}
+@media only screen and (min-width: 750px) {
+  .item__image .perfume-pic-desktop {
+    display: block;
+  }
+}
+.item__text {
+  padding-inline: 2.4rem;
+  padding-bottom: 2.4rem;
+}
+@media only screen and (min-width: 750px) {
+  .item__text {
+    padding-inline: 3.2rem;
+    padding-top: 3.1rem;
+  }
+}
+.item__text .text__title {
+  margin-bottom: 4.4rem;
+}
+@media only screen and (min-width: 750px) {
+  .item__text .text__title {
+    margin-bottom: 2.7rem;
+  }
+}
+.item__text .text__title .title__type {
+  font-family: "Montserrat";
+  color: hsl(228deg, 12%, 48%);
+  text-transform: uppercase;
+  letter-spacing: 0.415rem;
+  margin-bottom: 1.15rem;
+}
+@media only screen and (min-width: 750px) {
+  .item__text .text__title .title__type {
+    margin-bottom: 2rem;
+  }
+}
+.item__text .text__title h1 {
+  line-height: 1.1;
+  margin-bottom: 1.4rem;
+  color: hsl(212deg, 21%, 14%);
+}
+@media only screen and (min-width: 750px) {
+  .item__text .text__title h1 {
+    margin-bottom: 2.1rem;
+  }
+}
+.item__text .text__title p:not(.title__type) {
+  line-height: 1.8;
+  color: hsl(228deg, 12%, 48%);
+}
+@media only screen and (min-width: 750px) {
+  .item__text .text__title p:not(.title__type) {
+    line-height: 1.66;
+    font-size: calc(1.3rem + .1rem);
+  }
+}
+.item__text .text__price {
+  display: flex;
+  flex-direction: column;
+}
+.item__text .text__price .price__div-1 {
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+@media only screen and (min-width: 750px) {
+  .item__text .text__price .price__div-1 {
+    margin-bottom: 2.6rem;
+  }
+}
+.item__text .text__price .price__div-1 .price__current-price {
+  font-family: "Fraunces";
+  font-size: 2.2em;
+  color: hsl(158deg, 36%, 37%);
+}
+.item__text .text__price .price__div-1 .price__previous-price {
+  font-family: "Montserrat";
+  text-decoration: line-through;
+  color: hsl(228deg, 12%, 48%);
+}
+.item__text .text__price .price__add-purchase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.8rem;
+  width: 100%;
+  background-color: hsl(158deg, 36%, 37%);
+  border: none;
+  border-radius: 0.8rem;
+  transform: translateX(0.1rem);
+  font-weight: 700;
+  color: hsl(0deg, 0%, 100%);
+  gap: 1.1rem;
+  transition: all 80ms ease-in;
+}
+.item__text .text__price .price__add-purchase:hover {
+  cursor: pointer;
+  background-color: hsl(156deg, 42%, 18%);
+}
+@media only screen and (min-width: 750px) {
+  .item__text .text__price .price__add-purchase {
+    transform: translateX(-0.01rem);
+  }
+}
+
+
+
+
+/*# sourceMappingURL=style.css.map */
